@@ -14,9 +14,9 @@ class Main{
 
     public static void main(String[] args) throws JMSException, InterruptedException {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+         new ClassPathXmlApplicationContext("context.xml");
 
-        try {
+      /*  try {
             SimpleMessageProducer springJmsProducer = (SimpleMessageProducer) context
                     .getBean("springJmsProducer");
 
@@ -31,6 +31,6 @@ class Main{
 
         } finally {
            /// context.close();
-        }
+        }*/
     }
 }
