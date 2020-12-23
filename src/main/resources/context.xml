@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="tcp://localhost:61616"/>
-        <property name="userName" value="admin"/>
-        <property name="password" value="admin"/>
+    <description>
+        Настройка встроенного брокера (settings embedded broker)
+    </description>
+
+    <bean id="localBroker" class="org.apache.activemq.broker.BrokerService" init-method="start" destroy-method="stop">
+        <property name="brokerName" value="localBroker"/>
+        <property name="persistent" value="true"/>
+        <property name="dataDirectory" value="data"/>
+        <property name="useJmx" value="true"/>
+        <property name="systemUsage">
+            <bean class="org.apache.activemq.usage.SystemUsage">
+                <property name="storeUsage">
+                    <bean class="org.apache.activemq.usage.StoreUsage">
+                        <property name="limit" value="#{10737418L}"/>
+                    </bean>
+                </property>
+                <property name="memoryUsage">
+                    <bean class="org.apache.activemq.usage.MemoryUsage">
+                        <property name="limit" value="#{10737418L}"/>
+                    </bean>
+                </property>
+                <property name="tempUsage">
+                    <bean class="org.apache.activemq.usage.TempUsage">
+                        <property name="limit" value="#{10737418L}"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+        <property name="persistenceAdapter">
+            <bean class="org.apache.activemq.store.kahadb.KahaDBPersistenceAdapter">
+                <property name="indexCacheSize" value="33554432"/>
+            </bean>
+        </property>
+        <property name="transportConnectorURIs">
+            <array>
+                <value>vm://localhost</value>
+            </array>
+        </property>
     </bean>
+
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"/>
 
     <bean id="messageDestination" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg value="messageQueue1"/>
@@ -21,13 +58,12 @@
     </bean>
 
 
-
     <bean id="springJmsProducer" class="DataProcess.SimpleMessageProducer" init-method="start">
-        <property name="jmsTemplate" ref="jmsTemplate" />
+        <property name="jmsTemplate" ref="jmsTemplate"/>
     </bean>
 
     <bean id="springJmsConsumer" class="DataProcess.SimpleMessageConsumer" init-method="start">
-        <property name="jmsTemplate" ref="jmsTemplate" />
+        <property name="jmsTemplate" ref="jmsTemplate"/>
     </bean>
 
 </beans>

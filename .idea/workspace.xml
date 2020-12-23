@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a663925b-b6e8-4144-ad2b-2608d9c53a53" name="Default Changelist" comment="настройка хранилища встроенного брокера">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KahaDB/db-1.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KahaDB/db-2.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KahaDB/db-3.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KahaDB/db.data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KahaDB/db.redo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KahaDB/lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activemq-data/localhost/KahaDB/db-1.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activemq-data/localhost/KahaDB/db.data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activemq-data/localhost/KahaDB/db.redo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activemq-data/localhost/KahaDB/lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/DataProcess/SimpleMessageConsumer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/DataProcess/SimpleMessageProducer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/DataProcess/SimpleMessageProducer$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/DataProcess/SimpleMessageProducer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brokerConnect.iml" beforeDir="false" afterPath="$PROJECT_DIR$/brokerConnect.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/context.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1m3mEHMFJHDRDPBHpjmHVoKRR1V" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="brokerConnect" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a663925b-b6e8-4144-ad2b-2608d9c53a53" name="Default Changelist" comment="" />
+      <created>1608730535510</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608730535510</updated>
+      <workItem from="1608730536742" duration="1613000" />
+      <workItem from="1608733552759" duration="10021000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="настройка хранилища встроенного брокера" />
+    <option name="LAST_COMMIT_MESSAGE" value="настройка хранилища встроенного брокера" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="616" y="109" key="CommitChangelistDialog2" timestamp="1608751692880">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="616" y="109" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1608751692880" />
+    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1608745447142">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="771" y="295" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1608745447142" />
+    <state width="1815" height="295" key="GridCell.Tab.0.bottom" timestamp="1608751541346">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1608751541346" />
+    <state width="1815" height="295" key="GridCell.Tab.0.center" timestamp="1608751541345">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1608751541345" />
+    <state width="1815" height="295" key="GridCell.Tab.0.left" timestamp="1608751541345">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1608751541345" />
+    <state width="1815" height="295" key="GridCell.Tab.0.right" timestamp="1608751541346">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="295" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1608751541346" />
+    <state x="313" y="284" key="SettingsEditor" timestamp="1608736858907">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="313" y="284" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1608736858907" />
+    <state x="698" y="142" width="585" height="795" key="find.popup" timestamp="1608745543210">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="698" y="142" width="585" height="795" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1608745543210" />
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1608745493548">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="235" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1608745493548" />
+    <state x="671" y="223" key="spring file set editor" timestamp="1608731178713">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="671" y="223" key="spring file set editor/62.0.1858.1080@62.0.1858.1080" timestamp="1608731178713" />
+  </component>
+</project>
