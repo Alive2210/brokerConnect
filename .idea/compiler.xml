@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="brokerConnect" target="17" />
+      <module name="brokerConnect" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>

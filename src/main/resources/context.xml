@@ -11,19 +11,25 @@
         "sessionAcknowledgeMode" value="3" dups_on
 
     </description>
-
     <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
         <property name="brokerURL" value="failover:(tcp://localhost:61616)"/>
+        <property name="trustAllPackages" value="true"/>
         <property name="userName" value="admin"/>
         <property name="password" value="admin"/>
     </bean>
 
+    <bean id="pooledCf" class="org.apache.activemq.pool.PooledConnectionFactory">
+        <constructor-arg ref="connectionFactory"/>
+        <!--        <property name="connectionFactory" ref="connectionFactory"/>-->
+        <property name="maxConnections" value="100"/>
+    </bean>
     <bean id="messageDestination" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg value="messageQueue1"/>
     </bean>
 
     <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
-        <property name="connectionFactory" ref="connectionFactory"/>
+        <constructor-arg ref="pooledCf"/>
+        <!--        <property name="connectionFactory" ref="pooledCf"/>-->
         <!--<property name="receiveTimeout" value="10000"/>-->
         <property name="defaultDestination" ref="messageDestination"/>
         <property name="deliveryMode" value="2"/>
@@ -31,13 +37,17 @@
     </bean>
 
 
-
     <bean id="springJmsProducer" class="DataProcess.SimpleMessageProducer" init-method="start">
-        <property name="jmsTemplate" ref="jmsTemplate" />
+        <property name="jmsTemplate" ref="jmsTemplate"/>
     </bean>
 
     <bean id="springJmsConsumer" class="DataProcess.SimpleMessageConsumer" init-method="start">
-        <property name="jmsTemplate" ref="jmsTemplate" />
+        <property name="jmsTemplate" ref="jmsTemplate"/>
     </bean>
-
+    <bean id="prod" class="DataProcess.Producer" init-method="start">
+        <property name="pooledConnectionFactory" ref="pooledCf"/>
+    </bean>
+    <bean id="con" class="DataProcess.Consumer" init-method="start">
+        <property name="pooledConnectionFactory" ref="pooledCf"/>
+    </bean>
 </beans>

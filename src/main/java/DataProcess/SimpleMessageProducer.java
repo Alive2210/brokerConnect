@@ -6,10 +6,8 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
-import javax.jms.Destination;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.Session;
+import javax.jms.*;
+import java.io.Serializable;
 
 
 @Service
@@ -35,20 +33,25 @@ public class SimpleMessageProducer extends  Thread{
         this.destination = destination;
     }
 
-    public void sendMessage(final String msg) {
+    public void sendMessage(final MyObject msg) {
         LOG.info("Producer sends " + msg);
+
         if (destination == null) {
             jmsTemplate.send(new MessageCreator() {
-                public Message createMessage(Session session)
-                        throws JMSException {
-                    return session.createTextMessage(msg);
+                @Override
+                public Message createMessage(Session session) throws JMSException {
+                    ObjectMessage objectMessage = session.createObjectMessage();
+                    objectMessage.setObject(msg);
+                    return objectMessage;
                 }
             });
         } else {
             jmsTemplate.send(destination, new MessageCreator() {
                 public Message createMessage(Session session)
                         throws JMSException {
-                    return session.createTextMessage(msg);
+                    ObjectMessage objectMessage = session.createObjectMessage();
+                    objectMessage.setObject(msg);
+                    return objectMessage;
                 }
             });
         }
@@ -56,8 +59,11 @@ public class SimpleMessageProducer extends  Thread{
 
     @Override
     public synchronized void start() {
-        for (int i = 0; i < 1000; i++) {
-            sendMessage("hello");
+        MyObject myObject = new MyObject();
+        myObject.setAge(10);
+        myObject.setName("name");
+        for (int i = 0; i < 10; i++) {
+            sendMessage(myObject);
         }
 
 

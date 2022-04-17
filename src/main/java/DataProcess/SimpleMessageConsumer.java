@@ -6,7 +6,7 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.jms.*;
-
+import java.io.Serializable;
 
 
 public class SimpleMessageConsumer extends Thread {
@@ -31,17 +31,16 @@ public class SimpleMessageConsumer extends Thread {
         this.destination = destination;
     }
 
- private String receiveMessage() throws JMSException {
-        TextMessage textMessage;
+ private ObjectMessage receiveMessage() throws JMSException {
+     ObjectMessage receive;
         if (destination == null) {
-            textMessage = (TextMessage) jmsTemplate.receive();
-            LOG.info("Receive" + textMessage);
+            receive = (ObjectMessage) jmsTemplate.receive();
+            LOG.info("Receive" + ((MyObject)receive.getObject()).getAge());
         } else {
-
-            textMessage = (TextMessage) jmsTemplate.receive(destination);
-            LOG.info("Receive" + textMessage);
+            receive = (ObjectMessage) jmsTemplate.receive(destination);
+            LOG.info("Receive" + ((MyObject)receive.getObject()).getName());
         }
-        return textMessage.getText();
+     return receive;
     }
 
 
@@ -49,8 +48,8 @@ public class SimpleMessageConsumer extends Thread {
     public synchronized void start() {
         try {
             while (true){
-            receiveMessage();
-
+                MyObject object = (MyObject) receiveMessage().getObject();
+                System.out.println(object.getAge());
             }
         } catch (JMSException e) {
             e.printStackTrace();
